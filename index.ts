@@ -1,34 +1,34 @@
 import { clearInterval } from "timers";
 
-type SucessfulResponse = {
+type RespostaSucesso = {
     situacao: "OK" | "ER"
     resposta: unknown;
 };
-type PendingResponse = {
+type RespostaPendente = {
     situacao: "PE";
 };
-type QueueResponse =
-  | SucessfulResponse
-  | PendingResponse;
+type RespostaFila =
+  | RespostaSucesso
+  | RespostaPendente;
 
-export default function waitQueue(
-  fetcher: () => Promise<QueueResponse>
-): Promise<SucessfulResponse> {
+export default function esperaFila(
+  processo: () => Promise<RespostaFila>
+): Promise<RespostaSucesso> {
   return new Promise((resolve, reject) => {
     const interval = setInterval(() => {
-      let request = fetcher();
-      request.then((res) => {
-        if ("OK" === res.situacao || 'ER' === res.situacao) {
-          resolve(res);
+      let requisicao = processo();
+      requisicao.then((respostaFila) => {
+        if ("OK" === respostaFila.situacao || 'ER' === respostaFila.situacao) {
+          resolve(respostaFila);
           clearInterval(interval);
         }
       });
-      request.catch(res => {
-        reject(res)
+      requisicao.catch(err => {
+        reject(err)
         clearInterval(interval)
       })
     }, 500);
   });
 }
 
-export { QueueResponse, SucessfulResponse };
+export { RespostaFila, RespostaSucesso };
