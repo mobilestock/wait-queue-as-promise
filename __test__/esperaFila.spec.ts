@@ -1,4 +1,4 @@
-import esperaFila, {RespostaFila} from "../index";
+import {esperaFila, RespostaFila} from '../index'
 
 let timeout = 500000;
 it("deve tentar duas vezes e na terceira resolver com sucesso.", async () => {

@@ -1,8 +1,8 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = {
     mode: 'production',
-    entry: './index.ts',
+    entry: './index.js',
     module: {
         rules: [
             {
@@ -17,7 +17,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve('dist'),
         library: 'waitQueueAsPromise',
         libraryTarget: 'window',
         libraryExport: 'default'
