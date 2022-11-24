@@ -1,5 +1,3 @@
-import { clearInterval } from "timers";
-
 type RespostaSucesso = {
     situacao: "OK" | "ER"
     resposta: unknown;
