@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FabioMobileStock/wait-queue-as-promise.git"
+    "url": "git+https://github.com/mobilestock/wait-queue-as-promise.git"
   },
   "keywords": [
     "queue",
@@ -18,9 +18,9 @@
   "author": "MobileStock",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FabioMobileStock/wait-queue-as-promise/issues"
+    "url": "https://github.com/mobilestock/wait-queue-as-promise/issues"
   },
-  "homepage": "https://github.com/FabioMobileStock/wait-queue-as-promise#readme",
+  "homepage": "https://github.com/mobilestock/wait-queue-as-promise/#readme",
   "devDependencies": {
     "@types/jest": "^29.2.3",
     "@types/node": "^18.11.9",
@@ -29,6 +29,6 @@
     "typescript": "^4.9.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@OWNER"
+    "registry": "https://npm.pkg.github.com/@mobilestock"
   }
 }
