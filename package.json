@@ -1,6 +1,6 @@
 {
   "name": "@mobilestock/wait-queue-as-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wait queue as a promise",
   "main": "index.js",
   "type": "commonjs",
