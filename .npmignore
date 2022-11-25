@@ -1,2 +1,8 @@
 ./__test__
 ./README.md
+./.gitignore
+./jest.config.js
+./webpack.config.js
+./tsconfig.json
+./.npmignore
+./.npmrc
