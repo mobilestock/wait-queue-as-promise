@@ -3,11 +3,6 @@
   "version": "1.0.1",
   "description": "Wait queue as a promise",
   "main": "./index.js",
-  "types": "./index.d.ts",
-  "files": [
-    "index.d.ts",
-    "index.js"
-  ],
   "scripts": {
     "test": "jest",
     "build": "webpack"
@@ -36,8 +31,5 @@
     "typescript": "^4.9.3",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@mobilestock"
   }
 }
