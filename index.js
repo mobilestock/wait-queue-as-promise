@@ -3,6 +3,9 @@ module.exports = {
         return new Promise((resolve, reject) => {
             var requisicaoPendente = false
             const interval = setInterval(() => {
+                if (requisicaoPendente === true) {
+                    return;
+                }
                 let requisicao = processo()
                 requisicaoPendente = true
                 requisicao.then(respostaFila => {
