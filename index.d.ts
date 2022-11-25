@@ -1,6 +1,15 @@
 type RespostaSucesso = {
-    situacao: "OK" | "ER"
-    resposta: unknown;
+    situacao: "OK"
+    resposta: {
+        token_cartao?: string,
+        qrcode_text_pix?: string,
+        qrcode_pix?: string
+    };
+} | {
+    situacao: "ER",
+    resposta: {
+        message: string
+    }
 };
 type RespostaPendente = {
     situacao: "PE";
