@@ -4,6 +4,10 @@
   "description": "Wait queue as a promise",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
   "scripts": {
     "test": "jest",
     "build": "webpack"
