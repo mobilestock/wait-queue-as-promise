@@ -19,7 +19,7 @@ module.exports = {
                     clearInterval(interval)
                 })
                 requisicao.finally(() => (requisicaoPendente = false))
-            }, 2500)
+            }, 3500)
         })
     }
 }

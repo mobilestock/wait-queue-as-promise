@@ -18,7 +18,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve('dist'),
-        library: 'waitQueueAsPromise',
+        library: 'esperaFila',
         libraryTarget: 'window',
         libraryExport: 'default'
     }
