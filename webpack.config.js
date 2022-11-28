@@ -20,6 +20,6 @@ module.exports = {
         path: path.resolve('dist'),
         library: 'esperaFila',
         libraryTarget: 'window',
-        libraryExport: 'default'
+        libraryExport: 'esperaFila'
     }
 }
