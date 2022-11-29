@@ -1,4 +1,4 @@
-type RespostaSucesso<T = {}> = {
+type RespostaSucesso<T> = {
     situacao: "OK"
     resposta: T;
 } | {
@@ -10,11 +10,11 @@ type RespostaSucesso<T = {}> = {
 type RespostaPendente = {
     situacao: "PE";
 };
-type RespostaFila<T = {}> =
+type RespostaFila<T> =
   | RespostaSucesso<T>
   | RespostaPendente;
 
-declare function esperaFila(processo: () => Promise<RespostaFila>): Promise<RespostaSucesso>;
+declare function esperaFila<T = {}>(processo: () => Promise<RespostaFila<T>>): Promise<RespostaSucesso<T>>;
 
 export {
   esperaFila,
