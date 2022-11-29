@@ -4,7 +4,7 @@ let timeout = 500000;
 it("deve tentar duas vezes e na terceira resolver com sucesso.", async () => {
   let contagemTentativas = 1;
   const respostaFila = await esperaFila(
-    () => new Promise<RespostaFila>((resolve) => {
+    () => new Promise<RespostaFila<{message: string}>>((resolve) => {
       if (contagemTentativas === 3) {
         return resolve({
           situacao: "OK",
@@ -31,7 +31,7 @@ it("deve tentar duas vezes e na terceira resolver com sucesso.", async () => {
 it("deve tentar duas vezes e na terceira resolver com erro.", async () => {
   let contagemTentativas = 1;
   let respostaFila = await esperaFila(
-    () => new Promise<RespostaFila>((resolve) => {
+    () => new Promise<RespostaFila<{ message: string }>>((resolve) => {
       if (contagemTentativas === 3) {
         return resolve({
           situacao: 'ER',

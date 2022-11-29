@@ -1,10 +1,6 @@
-type RespostaSucesso = {
+type RespostaSucesso<T = {}> = {
     situacao: "OK"
-    resposta: {
-        token_cartao?: string,
-        qrcode_text_pix?: string,
-        qrcode_pix?: string
-    };
+    resposta: T;
 } | {
     situacao: "ER",
     resposta: {
@@ -14,8 +10,8 @@ type RespostaSucesso = {
 type RespostaPendente = {
     situacao: "PE";
 };
-type RespostaFila =
-  | RespostaSucesso
+type RespostaFila<T = {}> =
+  | RespostaSucesso<T>
   | RespostaPendente;
 
 declare function esperaFila(processo: () => Promise<RespostaFila>): Promise<RespostaSucesso>;
