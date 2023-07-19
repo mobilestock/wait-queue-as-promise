@@ -1,16 +1,19 @@
 module.exports = {
-    esperaFila: function (processo) {
+    esperaFila: function (url) {
         return new Promise((resolve, reject) => {
             var requisicaoPendente = false
             const interval = setInterval(() => {
                 if (requisicaoPendente === true) {
                     return;
                 }
-                let requisicao = processo()
+                let requisicao = fetch(url)
                 requisicaoPendente = true
-                requisicao.then(respostaFila => {
-                    if ("OK" === respostaFila.situacao || "ER" === respostaFila.situacao) {
-                        resolve(respostaFila)
+                requisicao.then(async resposta => {
+                    if (200 === resposta.status) {
+                        resolve(await resposta.json())
+                        clearInterval(interval)
+                    } else if ([422, 500].includes(resposta.status)) {
+                        reject(await resposta.json())
                         clearInterval(interval)
                     }
                 })
