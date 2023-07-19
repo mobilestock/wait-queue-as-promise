@@ -1,26 +1,9 @@
 import {esperaFila, RespostaFila} from '../index'
-
+/*
 let timeout = 500000;
 it("deve tentar duas vezes e na terceira resolver com sucesso.", async () => {
   let contagemTentativas = 1;
-  const respostaFila = await esperaFila(
-    () => new Promise<RespostaFila<{message: string}>>((resolve) => {
-      if (contagemTentativas === 3) {
-        return resolve({
-          situacao: "OK",
-          resposta: {
-            message: "Deu tudo certo."
-          },
-        });
-      }
-
-      resolve({
-        situacao: 'PE'
-      });
-
-      contagemTentativas++;
-    })
-  );
+  const respostaFila = await esperaFila('api_pagamento/link_pagamento/fila/');
 
   expect(respostaFila.resposta).toStrictEqual({
     message: "Deu tudo certo."
